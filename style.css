@@ -1,0 +1,146 @@
+/* COMMON STYLES */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+	margin: 0;
+	padding: 0
+}
+
+:root {
+	--index: calc(1vh + 1vw);
+	--white: #f1f1f1;
+	--teal: #FCFAEE;
+	--light-brown: #ECDFCC;
+	--green: #A5B68D;
+	--orange: #DA8359;
+	--box-shadow: 10px 10px 40px 20px rgba(0, 0, 0, 0.1);
+	--transition: all .15s ease-in;
+	--radius-small: 12px;
+	--radius-wide: 30px;
+	--opacity: 0.5;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+.container {
+	width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
+	background-color: var(--white);
+	display: flex;
+	flex-direction: column;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+li {
+	margin-left: 2ch;
+	list-style-type: '\21A6';
+	padding-inline-start: 1ch;
+}
+
+
+/* NAVIGATION BAR STYLES */
+
+header {
+	background-color: var(--teal);
+	margin: 20px auto;
+	padding: 0 20px;
+	height: 60px;
+	border-radius: var(--radius-wide);
+	display: flex;
+	align-items: center;
+	text-align: center;
+	justify-content: space-between;
+}
+
+
+#nav-buttons {
+	display: flex;
+	justify-content: space-between;
+	width: 320px;
+}
+
+#support {
+	vertical-align: middle;
+	align-items: center;
+	padding: 10px 25px;
+	text-align: center;
+	border-radius: var(--radius-wide);
+	/* border-style: solid; */
+	border-color: transparent;
+	background-color: var(--light-brown);
+}
+
+/* CONTENT BLOCKS STYLES */
+
+/* TEMPORARY BLOCK, REMOVE IT WITH IMAGES WHEN YOU HET THEM */
+.img-temp {
+	background-color: #333;
+	width: 300px;
+	height: 300px;
+	margin: 5px;
+	border-radius: var(--radius-small);
+}
+
+.block {
+	display: grid;
+	border-radius: var(--radius-wide);
+	margin-bottom: 60px;
+}
+
+.square-greed {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+#main {
+	grid-template-columns: 2fr 1fr 1fr;
+}
+
+.buy-card {
+	border-radius: var(--radius-small);
+	padding: 20px;
+	background-color: var(--teal);
+}
+
+.buy-card p {
+	margin: 10px 0 70px 0;
+}
+
+.buy {
+	background-color: var(--orange);
+	color: var(--white);
+	border-radius: var(--radius-wide);
+	padding: 20px 50px;
+}
+
+#for-whom {
+	grid-template-columns: 1fr 1fr;
+}
+
+.for-whom-card {
+	border-radius: var(--radius-small);
+	padding: 20px;
+	background-color: var(--teal);
+}
+
+/* FOOTER STYLES */
+
+footer {
+	background: #333;
+	color: #fff;
+	text-align: center;
+	padding: 90px 0;
+}
