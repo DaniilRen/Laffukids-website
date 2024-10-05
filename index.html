@@ -39,35 +39,35 @@
 		<header>
 			<a href="#">@laffy_kids</a>
 			<div id="nav-buttons">
-				<a href="#" class="nav">Для кого</a>
+				<a href="#for-whom" class="nav">Для кого</a>
 				<a href="#" class="nav">Отзывы</a>
 				<a href="#" class="nav">Сборник</a>
 			</div>
-			<div id="support">
+			<div class="support-btn">
 				<a href="" class="nav">Поддержка</a>
 			</div>
 		</header>
 
 		<div class="block" id="main">
-			<div class="buy-card">
+			<div class="card">
 				<h1>Более 80 простых рецептов перекусов</h1>
 				<p>отлично подойдут для завтраков для всей семьи</p>
-				<a href="" class="buy" id="russia">приобрести в РФ</a>
-				<a href="" class="buy" id="alternative">приобрести из-за рубежа</a>
+				<a href="" class="buy-btn" id="russia">приобрести в РФ</a>
+				<a href="" class="buy-btn" id="alternative">приобрести из-за рубежа</a>
 			</div>
 			<div class="img-temp"></div>
 			<div class="img-temp"></div>
 		</div>
 
 		<div class="block" id="for-whom">
-			<div class="square-greed">
+			<div class="greed">
 				<div class="img-temp"></div>
 				<div class="img-temp"></div>
 				<div class="img-temp"></div>
 				<div class="img-temp"></div>
 			</div>
-			<div class="for-whom-card">
-				<p>Вам точно нужен этот сборник, если:</p>
+			<div class="card">
+				<h2>Вам точно нужен этот сборник, если:</h2>
 				<ul>
 					<li>Вы хотите разнообразить рацион вашего ребенка</li>
 					<li>Вы хотите сэкономть время на готовку</li>
@@ -76,18 +76,90 @@
 			</div>
 		</div>
 
+
+		<div class="block" id="author">
+			<h2>Автор сборника</h2>
+			<div id="about">
+				<div class="card">
+					<p>Я, <span>автор блога @laffu_kids и мама Софии</span>, не по-наслышке знаю, сколько времени уходит на
+						готовку. С
+						помощью
+						этого сборника вам не придется ломать голову над вопросами,
+						что вкусного и полезного приготовить ребенку на перекус.
+					</p>
+				</div>
+				<div class="circle"></div>
+			</div>
+		</div>
+
+		<div class="block" id="support">
+			<p>Если у вас возникли сложности, напишите в поддержку</p>
+			<div class="support-btn">
+				<a href="" class="nav">Поддержка</a>
+			</div>
+		</div>
 	</div>
-
-	<div class="block" id="author">
-		<h1>Автор сборника</h1>
-
 	</div>
 
 	<div class="block" id="qa">
+		<div class="dropwdown">
+			<button class="dropdown-btn" id="dropdown-btn-1">
+				<span>В каком формате я получу сборник?</span>
+				<span class="cross">+</span>
+			</button>
+			<div class="dropdown-content" id="dropdown-content-1">
+				<p>Материал предоставляется в формате PDF</p>
+			</div>
+		</div>
+		<div class="dropwdown">
+			<button class="dropdown-btn" id="dropdown-btn-2">
+				<p>В каком формате я получу сборник?</p>
+				<span class="cross">+</span>
+			</button>
+			<div class="dropdown-content" id="dropdown-content-2">
+				<p>Материал предоставляется в формате PDF</p>
+			</div>
+		</div>
+		<div class="dropwdown">
+			<button class="dropdown-btn" id="dropdown-btn-3">
+				<p>В каком формате я получу сборник?</p>
+				<span class="cross">+</span>
+			</button>
+			<div class="dropdown-content" id="dropdown-content-3">
+				<p>Материал предоставляется в формате PDF</p>
+			</div>
+		</div>
 
 	</div>
 
-	<footer>Ulya Cesar</footer>
+	<div id="docs">
+		<a href="" id="oferta">Оферта</a>
+		<a href="" id="cp">Политика конфиденциальности</a>
+	</div>
+
+	<footer>
+		<p>&copy; Ulya Cesar</p>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	<script>
+		$(document).ready(function () { // анимация прокрутки, удаление якоря из адресной строки
+			$("a[href*='#']").on("click", function (e) {
+				var anchor = $(this);
+				$('html, body').stop().animate({
+					scrollTop: $(anchor.attr('href')).offset().top
+				}, 777);
+				e.preventDefault();
+				return false;
+			});
+		});
+
+		$('.dropdown-btn').click(function () {
+			let id = $(this).attr('id').slice(-1);
+			$(`#dropdown-content-${id}`).toggleClass('active')
+			$(`#dropdown-btn-${id}`).find('.cross').toggleClass('cross-active')
+		})
+	</script>
 </body>
 
 </html>
