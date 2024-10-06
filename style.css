@@ -18,25 +18,24 @@
 	--box-shadow: 10px 10px 40px 20px rgba(0, 0, 0, 0.1);
 	--transition: all .2s ease-in;
 	--radius-small: 12px;
-	--radius-wide: 30px;
+	--radius-wide: 36px;
 	--opacity: 0.5;
 }
 
 html,
 body {
 	height: 100%;
+	line-height: 31px;
 }
 
 .container {
-	width: 1200px;
+	max-width: 1200px;
 	margin: 0 auto;
 }
 
 body {
 	font-family: "Open Sans", sans-serif;
 	background-color: var(--white);
-	/* display: flex; */
-	/* flex-direction: column; */
 }
 
 a {
@@ -61,7 +60,7 @@ header {
 	background-color: var(--teal);
 	margin: 20px auto;
 	padding: 0 20px;
-	height: 60px;
+	height: 66px;
 	border-radius: var(--radius-wide);
 	display: flex;
 	align-items: center;
@@ -82,7 +81,6 @@ header {
 	padding: 10px 55px;
 	text-align: center;
 	border-radius: var(--radius-wide);
-	/* border-style: solid; */
 	border-color: transparent;
 	background-color: var(--light-brown);
 }
@@ -106,6 +104,8 @@ header {
 .greed {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
 }
 
 .card {
@@ -116,26 +116,37 @@ header {
 
 /* MAIN BLOCK STYLES */
 
-#main div {
-	margin: 10px;
+#main .card {
+	margin-right: 20px;
 	border-radius: var(--radius-small);
 }
 
 #main .card p {
-	margin: 10px 0 70px 0;
+	margin: 10px 0 60px 0;
+}
+
+.buy-btns {
+	font-weight: 700;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 500px;
 }
 
 .buy-btn {
+	text-align: center;
 	background-color: var(--orange);
 	color: var(--white);
 	border-radius: var(--radius-wide);
-	padding: 20px 50px;
+	padding: 22px 0;
+	width: 400px;
+	margin: 10px 0;
 }
 
 /* FOR WHOM BLOCK STYLES */
 
-#for-whom div {
-	margin: 10px;
+#for-whom .card {
+	margin-left: 20px;
 	border-radius: var(--radius-small);
 }
 
@@ -170,11 +181,7 @@ header {
 #about .card {
 	padding: 80px 40px;
 	max-width: 600px;
-	border-radius: var(--radius-small) 120px var(--radius-small) 100px;
-}
-
-#about-text {
-	max-width: 500px;
+	border-radius: var(--radius-small) 120px var(--radius-small) 80px;
 }
 
 /* SUPPORT BLOCK STYLES */
@@ -231,6 +238,7 @@ header {
 }
 
 .cross {
+	color: rgba(0.1, 0.1, 0.1, 0.5);
 	font-size: 50px;
 	font-weight: 300;
 	width: 45px;
@@ -240,10 +248,6 @@ header {
 	justify-content: center;
 	border-radius: 50%;
 	transition: var(--transition);
-}
-
-.cross:hover {
-	background-color: #d3cfcf18;
 }
 
 .cross-active {
@@ -285,4 +289,29 @@ footer {
 	color: #fff;
 	text-align: center;
 	padding: 90px 0;
+}
+
+/* OFERTA AND POLITICS STYLES */
+
+#oferta,
+#politics {
+	padding: 0 5px;
+}
+
+#oferta p {
+	margin: 20px 0;
+}
+
+#politics p {
+	margin: 5px 0;
+}
+
+#politics {
+	font-size: 14px;
+	line-height: 26px;
+}
+
+#oferta a,
+#politics a {
+	color: var(--orange);
 }

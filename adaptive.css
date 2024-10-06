@@ -1,0 +1,100 @@
+/* ADAPTIVE */
+
+@media (max-width: 720px) {
+	body {
+		line-height: 1.05;
+		font-size: 13px;
+	}
+
+	header {
+		margin: 0;
+		height: 50px;
+	}
+
+	header .support-btn {
+		display: none;
+	}
+
+	#nav-buttons {
+		width: 200px;
+	}
+
+	#main {
+		flex-direction: column;
+	}
+
+	#main .card {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		align-items: center;
+		margin: 10px 0 60px 0;
+	}
+
+	#main .card p {
+		margin: 10px 0 20px 0;
+	}
+
+	.buy-btns {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 260px;
+	}
+
+	.buy-btn {
+		width: 280px;
+	}
+
+	.img-temp {
+		width: 120px;
+		height: 120px;
+	}
+
+	#about {
+		flex-direction: column;
+	}
+
+	.circle {
+		width: 260px;
+		height: 260px;
+	}
+
+	#support {
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+		padding: 0 40px;
+	}
+
+	#support p {
+		margin-bottom: 20px;
+	}
+
+	#support p::after {
+		content: '';
+	}
+
+	#qa {
+		margin-bottom: 30px;
+	}
+
+	.dropdown-btn {
+		width: 100%;
+	}
+
+	#docs {
+		height: 60px;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		margin-bottom: 30px;
+	}
+
+	#docs a {
+		margin: 10px 0;
+	}
+}
