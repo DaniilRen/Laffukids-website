@@ -3,7 +3,7 @@
 @media (max-width: 720px) {
 	body {
 		line-height: 1.05;
-		font-size: 13px;
+		font-size: 12px;
 	}
 
 	header {
@@ -15,6 +15,19 @@
 		display: none;
 	}
 
+	h1 {
+		font-size: 44px;
+	}
+
+	.container {
+		overflow: hidden;
+		padding: 0 20px;
+	}
+
+	.block {
+		margin: 25px 0;
+	}
+
 	#nav-buttons {
 		width: 200px;
 	}
@@ -23,42 +36,98 @@
 		flex-direction: column;
 	}
 
+	#main img {
+		display: none;
+	}
+
 	#main .card {
+		padding: 15px 0;
+		width: 100%;
 		display: flex;
-		flex-direction: column;
 		justify-content: center;
 		text-align: center;
 		align-items: center;
 		margin: 10px 0 60px 0;
+		margin: 0;
 	}
 
 	#main .card p {
-		margin: 10px 0 20px 0;
+		font-size: 12px;
+		margin: 10px 15px 20px 15px;
 	}
 
 	.buy-btns {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		width: 260px;
+		/* width: 260px; */
 	}
 
 	.buy-btn {
 		width: 280px;
 	}
 
-	.img-temp {
-		width: 120px;
-		height: 120px;
+	#for-whom {
+		flex-direction: column;
+	}
+
+	#for-whom img {
+		max-width: 100%;
+		margin-bottom: 20px;
+	}
+
+	#for-whom .card {
+		margin: 0;
+	}
+
+	#for-whom .card li {
+		font-size: 14px;
+		margin-top: 20px;
+	}
+
+	#gallery-down {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 10px;
+		grid-row-gap: 10px;
+	}
+
+	.gallery {
+		margin-bottom: 20px;
+	}
+
+	.gallery img {
+		max-width: 100%;
+		border-radius: var(--radius-small)
+	}
+
+	#gallery-upper {
+		display: none;
+	}
+
+	#author h2 {
+		margin-top: 20px;
+		margin-bottom: 0;
 	}
 
 	#about {
 		flex-direction: column;
 	}
 
+	#about .card {
+		padding: 40px 20px 60px 20px;
+		border-radius: var(--radius-small) var(--radius-small) var(--radius-small) 80px;
+	}
+
 	.circle {
-		width: 260px;
-		height: 260px;
+		width: 240px;
+		height: 240px;
+		margin-bottom: 30px;
+	}
+
+	#instruction .greed {
+		display: flex;
+		flex-direction: column;
 	}
 
 	#support {

@@ -47,7 +47,7 @@
 			<h3>Ваш заказ</h3>
 			<div class="price">
 				<p>1 шт.</p>
-				<p>Сборник рецептов 660 руб.</p>
+				<p>Сборник рецептов: <s>699</s> 499 руб.</p>
 			</div>
 			<form action="" method="post">
 				<div class="form-element">
@@ -60,7 +60,7 @@
 					<input type="text" placeholder="Ваш номер телефона" name="phone" pattern="^[+]?(7|8)\d{10}$" required>
 				</div>
 				<div class="form-element" id="total">
-					<p>К оплате: 660 руб.</p>
+					<p>К оплате: 499 руб.</p>
 				</div>
 				<div class="form-element">
 					<button type="submit">Оплатить</button>
@@ -77,8 +77,8 @@
 			<a href="#">@laffy_kids</a>
 			<div id="nav-buttons">
 				<a href="#for-whom" class="nav">Для кого</a>
-				<a href="#" class="nav">Отзывы</a>
-				<a href="#" class="nav">Сборник</a>
+				<a href="#author" class="nav">Об авторе</a>
+				<a href="#instruction" class="nav">Сборник</a>
 			</div>
 			<div class="support-btn">
 				<a href="https://t.me/yuliya_tsez" class="nav">Поддержка</a>
@@ -87,8 +87,9 @@
 
 		<div class="block" id="main">
 			<div class="card">
-				<h1>Более 80 простых рецептов перекусов</h1>
-				<p>отлично подойдут для завтраков для всей семьи</p>
+				<h1>Сборник рецептов</h1>
+				<h2>Более 80 простых рецептов перекусов</h2>
+				<p>Отлично подойдут на завтрак для всей семьи.</p>
 				<div class="buy-btns">
 					<a href="javascript:void(0)" class="buy-btn" id="buy-russia">ПРИОБРЕСТИ В РФ</a>
 					<a href="javascript:void(0)" class="buy-btn" id="buy-alternative">ПРИОБРЕСТИ ИЗ-ЗА РУБЕЖА</a>
@@ -97,7 +98,7 @@
 			<img class="img-main" src="../static/assets/imgs/sb-page2.jpg" id="img-main-2">
 		</div>
 
-		<div id="gallery">
+		<div class="gallery" id="gallery-upper">
 			<img src="../static/assets/imgs/1.png" alt="">
 			<img src="../static/assets/imgs/2.png" alt="">
 			<img src="../static/assets/imgs/3.png" alt="">
@@ -105,15 +106,22 @@
 		</div>
 
 		<div class="block" id="for-whom">
-			<img src="../static/assets/imgs/sb-page1.jpg" alt="">
+			<img src="../static/assets/imgs/sb-page1.png" alt="">
 			<div class="card">
 				<h2>Вам точно нужен этот сборник, если:</h2>
 				<ul>
-					<li>Вы хотите разнообразить рацион вашего ребенка</li>
-					<li>Вы хотите сэкономть время на готовку</li>
-					<li>Вы хотите заменить покупки бесполезных перекусов на вкусные и полезные</li>
+					<li>Вы хотите <span>разнообразить рацион</span> вашего ребенка</li>
+					<li>Вы хотите <span>сэкономить время</span> на готовку</li>
+					<li>Вы хотите <span>заменить покупки</span> бесполезных перекусов на вкусные и полезные</li>
 				</ul>
 			</div>
+		</div>
+
+		<div class="gallery" id="gallery-down">
+			<img src="../static/assets/imgs/1.png" alt="">
+			<img src="../static/assets/imgs/2.png" alt="">
+			<img src="../static/assets/imgs/3.png" alt="">
+			<img src="../static/assets/imgs/4.png" alt="">
 		</div>
 
 
@@ -122,11 +130,9 @@
 			<div id="about">
 				<div class="card">
 					<p>Я, автор блога <span>@laffy_kids</span> и мама Софии, не по-наслышке знаю, сколько времени уходит на
-						готовку. С
-						помощью
-						этого сборника вам не придется ломать голову над вопросами,
-						что вкусного и полезного приготовить ребенку.
-					</p>
+						готовку.</p>
+					<p>С помощью этого сборника вам не придется ломать голову над вопросами, что вкусного и полезного
+						приготовить ребенку.</p>
 				</div>
 				<img src="../static/assets/imgs/author.png" alt="" class="circle">
 			</div>
