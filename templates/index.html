@@ -39,19 +39,36 @@
 </head>
 
 <body>
-	<div id="payment-form"></div>
+	<div id="payment-widget"></div>
 
-	<div id="payment-details" class="modal">
-		<div class="modal-content">
-			<span class="close">&times;</span>
+	<div id="payment-form" class="modal-overlay">
+		<div class="modal" id="payment-modal">
+			<a class="close">&times;</a>
 			<h3>Ваш заказ</h3>
-			<p>Сборник - 690 р.</p>
-			<form action="#">
-				<input type="text" value="Name">
-				<input type="email" value="Email">
-				<input type="text" value="Phone">
+			<div class="price">
+				<p>1 шт.</p>
+				<p>Сборник рецептов 660 руб.</p>
+			</div>
+			<form action="" method="post">
+				<div class="form-element">
+					<input type="text" placeholder="Ваше имя" name="name" required>
+				</div>
+				<div class="form-element">
+					<input type="email" placeholder="Ваша почта" name="email" required>
+				</div>
+				<div class="form-element">
+					<input type="text" placeholder="Ваш номер телефона" name="phone" pattern="^[+]?(7|8)\d{10}$" required>
+				</div>
+				<div class="form-element" id="total">
+					<p>К оплате: 660 руб.</p>
+				</div>
+				<div class="form-element">
+					<button type="submit">Оплатить</button>
+				</div>
 			</form>
-			<p>Some text in the Modal..</p>
+			<div class="small-text">
+				<p>Внимательно заполняйте данные перед платой</p>
+			</div>
 		</div>
 	</div>
 
@@ -199,30 +216,26 @@
 			});
 		});
 
-		$('.dropdown-btn').click(() => {
+		$('.dropdown-btn').on("click", function () {
 			let id = $(this).attr('id').slice(-1);
 			$(`#dropdown-content-${id}`).toggleClass('active')
 			$(`#dropdown-btn-${id}`).find('.cross').toggleClass('cross-active')
 		})
 
-		$('#buy-russia').click(() => {
-			$('#payment-details').toggleClass('open')
-			if ($("#payment-details").hasClass("hidden")) {
-				// Enable scroll
-				$("body").css('overflow', "auto");
-			} else {
-				// Disable scroll
-				$("body").css('overflow', "hidden");
-			}
+		$('#buy-russia').on("click", function () {
+			$('#payment-form').addClass('open')
+			$('body').css('overflow', 'hidden')
 		})
 
-		$('#payment-details').find('.close').click(() => {
-			$('#payment-details').toggleClass('open')
+		$('.close').on('click', function () {
+			$(this).parents('.modal-overlay').removeClass('open')
+			$('body').css('overflow', 'auto')
 		})
 
-		$(window).click((e) => {
-			if (e.target == $('#payment-details')) {
-				$('#payment-details').toggleClass('open')
+		$('#payment-form').on('click', function (e) {
+			if ($(this).hasClass('open') && $(this).get(0) == e.target) {
+				$(this).removeClass('open')
+				$('body').css('overflow', 'auto')
 			}
 		})
 	</script>
