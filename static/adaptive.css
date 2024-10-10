@@ -56,13 +56,6 @@
 		margin: 10px 15px 20px 15px;
 	}
 
-	.buy-btns {
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		/* width: 260px; */
-	}
-
 	.buy-btn {
 		width: 280px;
 	}
@@ -151,7 +144,7 @@
 	}
 
 	.dropdown-btn {
-		width: 100%;
+		width: 340px;
 	}
 
 	#docs {
@@ -165,5 +158,11 @@
 
 	#docs a {
 		margin: 10px 0;
+	}
+}
+
+@media (max-width: 375px) {
+	.dropdown-btn {
+		width: 310px;
 	}
 }

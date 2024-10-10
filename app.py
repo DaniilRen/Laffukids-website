@@ -10,6 +10,7 @@ from yookassa import Configuration
 
 app = Flask(__name__)
 
+# yookassa config
 Configuration.account_id = '467956'
 Configuration.secret_key = 'test_Yf2ocwOYQBDf1P7VRXW-exqxyMmmL4Zo8BOzQsaYnWA'
 
