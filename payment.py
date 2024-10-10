@@ -1,9 +1,13 @@
 import uuid
+from flask import Blueprint
 from yookassa import Payment
 from yookassa.domain.models.currency import Currency
 from yookassa.domain.models.receipt import Receipt, ReceiptItem
 from yookassa.domain.common.confirmation_type import ConfirmationType
 from yookassa.domain.request.payment_request_builder import PaymentRequestBuilder
+
+
+bp = Blueprint('email', __name__, url_prefix="/payment")
 
 
 # создание квитанции
@@ -43,6 +47,10 @@ def create_payment(receipt):
 
 	return payment
 	
+
+# проверка статуса платежа
+
+
 
 # создание платежа получение данных
 def make_payment():
