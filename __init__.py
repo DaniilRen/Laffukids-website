@@ -1,16 +1,10 @@
 from flask import Flask
 import main, mail, payment
 from dotenv import load_dotenv
-from yookassa import Configuration
 import os
 
 
 def create_app():
-	# yookassa config
-	Configuration.account_id = os.getenv('YOOKASSA_ACCOUNT_ID')
-	Configuration.secret_key = os.getenv('YOOKASSA_SECRET_KEY')
-
-	# flask app config
 	app = Flask(__name__)
 
 	app.register_blueprint(main.bp)

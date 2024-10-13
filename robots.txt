@@ -1,0 +1,4 @@
+User-agent: * #указывает, для каких роботов установлены директивы
+Allow: /
+Disallow: /payment-notification/ # запрещает ссылки из "Корзины с товарами".
+Sitemap: https://lafukids.ru/sitemap.xml # указывает роботу на файл Sitemap для сайта

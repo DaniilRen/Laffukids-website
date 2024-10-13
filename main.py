@@ -2,8 +2,10 @@ from flask import Blueprint
 from flask import render_template
 from flask import redirect
 from flask import request
+from flask import jsonify
+from flask import make_response
 from flask_mail import Mail, Message
-from payment import create_payment, create_receipt, make_payment
+from payment import create_payment, create_receipt, check_id
 from mail import send_mail
 
 
@@ -17,21 +19,36 @@ def index():
 		email = request.form['email']
 		phone = request.form['phone']
 
-		# receipt = create_receipt(name, phone, email)
-		# payment = create_payment(receipt)
-		# return redirect(payment.confirmation.confirmation_url)
-		send_mail(name='Daniil', to='GribnoiChel@yandex.ru')
-		return render_template('index.html')
+		receipt = create_receipt(name, phone, email)
+		payment = create_payment(receipt)
+		return redirect(payment.confirmation.confirmation_url)
+
+		# send_mail(name=name, to=email)
 
 	else:
 		return render_template('index.html')
 
 
-@bp.route('/politics')
+@bp.route('/politics', methods=("GET", "POST"))
 def politics():
 	return render_template('politics.html')
 
 
-@bp.route('/oferta')
+@bp.route('/oferta', methods=("GET", "POST"))
 def oferta():
 	return render_template('oferta.html')
+
+
+
+@bp.route('/payment-notification', methods=("GET", "POST"))
+def payment_notification():
+	try:
+		event = request.args.get("event", default=None)
+		payment = request.args.get("object", default=None)
+		if event == "payment.succeeded " and check_id(payment.id):
+			send_mail(payment.metadata.customer_email)
+			return make_response(f"Success for event: {event}", status_code=200) 
+		error = "Wrong payment id or status"
+	except Exception as e:
+		error = e
+	return make_response(f"Error: {error} for event: {event}", status_code=500) 
