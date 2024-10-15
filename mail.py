@@ -13,6 +13,7 @@ import smtplib, ssl
 bp = Blueprint('mail', __name__, url_prefix="/mail")
 
 
+# отправка письма на почту клиента
 def send_mail(name, to):
 	app = current_app._get_current_object()
 	mail = Mail(app)

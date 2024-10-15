@@ -27,7 +27,7 @@ def create_receipt(name, phone, email):
 			"description": "Collection of recipes",
 			"quantity": 1.0,
 			"amount": {
-					"value": 499.0,
+					"value": 349.0,
 					"currency": Currency.RUB
 			},
 			"vat_code": 2
@@ -40,8 +40,8 @@ def create_receipt(name, phone, email):
 def create_payment(receipt, conf_type=ConfirmationType.REDIRECT):
 	idempotence_key = str(uuid.uuid4())
 	builder = PaymentRequestBuilder()
-	builder.set_amount({"value": 499, "currency": Currency.RUB}) \
-		.set_confirmation({"type": conf_type, "return_url": "http://127.0.0.1:5000/"}) \
+	builder.set_amount({"value": 349, "currency": Currency.RUB}) \
+		.set_confirmation({"type": conf_type, "return_url": "https://lafukids.ru"}) \
 		.set_capture(True) \
 		.set_description("Cборник рецептов") \
 		.set_metadata({
@@ -54,14 +54,3 @@ def create_payment(receipt, conf_type=ConfirmationType.REDIRECT):
 	request = builder.build()
 	payment = Payment.create(request, idempotence_key)
 	return payment
-
-	
-
-# проверка id платежа
-def check_id(payment_id):
-	params = {
-	 "status": "succeeded"
-	}
-	payments = Payment.list(params).items
-	payments_id_list = list(map(lambda p: p.id, payments))
-	return payment_id in payments_id_list
