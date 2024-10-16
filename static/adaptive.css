@@ -147,6 +147,10 @@
 		width: 340px;
 	}
 
+	.cross {
+		font-size: 35px;
+	}
+
 	#docs {
 		height: 60px;
 		flex-direction: column;
