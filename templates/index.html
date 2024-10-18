@@ -52,7 +52,8 @@
 					<input type="email" placeholder="Ваша почта" name="email" required>
 				</div>
 				<div class="form-element">
-					<input type="text" placeholder="Ваш номер телефона" name="phone" pattern="^[+]?(7|8)\d{10}$" required>
+					<input type="text" placeholder="Ваш номер телефона" name="phone" pattern="^[+]?\s?(\d\s?){10, 18}$"
+						required>
 				</div>
 				<div class="form-element" id="total">
 					<p>К оплате: 349 руб.</p>
@@ -62,7 +63,12 @@
 				</div>
 			</form>
 			<div class="small-text">
-				<p>Внимательно заполняйте данные перед платой</p>
+				<p> <span>*</span> Внимательно заполняйте данные перед оплатой, на них будет
+					отправлено письмо со сборником. <br>
+					При оплате не
+					из РФ доступны платежные системы МИР, Белкарт, АПРА, Корти Милли, Express Pay. Для альтернативной оплаты
+					нажмите на кнопку "Купить не из
+					России"</p>
 			</div>
 		</div>
 	</div>
@@ -73,7 +79,7 @@
 			<div id="nav-buttons">
 				<a href="#for-whom" class="nav">Для кого</a>
 				<a href="#author" class="nav">Об авторе</a>
-				<a href="#instruction" class="nav">Сборник</a>
+				<a href="#instruction" class="nav">Как получить</a>
 			</div>
 			<button class="support-btn" onclick="location.href='https://t.me/yuliya_tsez'">Поддержка</button>
 		</header>
@@ -83,7 +89,10 @@
 				<h1>Сборник рецептов</h1>
 				<h2>Более 80 простых рецептов перекусов</h2>
 				<p>Отлично подойдут на завтрак для всей семьи</p>
-				<a href="javascript:void(0)" class="buy-btn" id="buy-russia">Приобрести сборник</a>
+				<a href="javascript:void(0)" class="buy-btn" id="buy-russia">Приобрести за 349 рублей</a>
+				<a href="https://app.lava.top/ru/products/02553c53-5a99-4187-bc1b-708d3583fdce" class="buy-btn"
+					id="buy-from-abroad">Купить не из
+					России</a>
 			</div>
 			<img class="img-main" src="../static/assets/imgs/compressed/sb-page2.jpg" id="img-main-2">
 		</div>
@@ -108,10 +117,10 @@
 		</div>
 
 		<div class="gallery" id="gallery-down">
-			<img src="../static/assets/imgs/1.png" alt="">
-			<img src="../static/assets/imgs/2.png" alt="">
-			<img src="../static/assets/imgs/3.png" alt="">
-			<img src="../static/assets/imgs/4.png" alt="">
+			<img src="../static/assets/imgs/compressed/1.png" alt="">
+			<img src="../static/assets/imgs/compressed/2.png" alt="">
+			<img src="../static/assets/imgs/compressed/3.png" alt="">
+			<img src="../static/assets/imgs/compressed/4.png" alt="">
 		</div>
 
 
@@ -145,7 +154,7 @@
 				</div>
 				<div class="card">
 					<h3>Открыть материал из письма</h3>
-					<p>Сохраните письмо со сборником. Оно проходит только один раз</p>
+					<p>Сохраните письмо со сборником. Оно приходит только один раз</p>
 				</div>
 			</div>
 
@@ -159,7 +168,7 @@
 	</div>
 
 	<div class="block" id="qa">
-		<div class="dropwdown">
+		<div class="dropwdown unselectable">
 			<button class="dropdown-btn" id="dropdown-btn-1">
 				<span>В каком формате я получу сборник?</span>
 				<span class="cross">+</span>
@@ -168,7 +177,7 @@
 				<p>Материал предоставляется в формате PDF</p>
 			</div>
 		</div>
-		<div class="dropwdown">
+		<div class="dropwdown unselectable">
 			<button class="dropdown-btn" id="dropdown-btn-2">
 				<p>Я потерял(а) доступ, что делать?</p>
 				<span class="cross">+</span>
@@ -177,7 +186,7 @@
 				<p>Напишите об этом в поддержку</p>
 			</div>
 		</div>
-		<div class="dropwdown">
+		<div class="dropwdown unselectable">
 			<button class="dropdown-btn" id="dropdown-btn-3">
 				<p>Как долго я могу пользоваться материалами?</p>
 				<span class="cross">+</span>
@@ -186,13 +195,14 @@
 				<p>Доступ бессрочный!</p>
 			</div>
 		</div>
-		<div class="dropwdown">
+		<div class="dropwdown unselectable">
 			<button class="dropdown-btn" id="dropdown-btn-4">
-				<p>Можно ли купить сборник из-за рубежа?</p>
+				<p>Могу ли я купить сборник из-за рубежа?</p>
 				<span class="cross">+</span>
 			</button>
 			<div class="dropdown-content" id="dropdown-content-4">
-				<p>Принимаются любые карты платёжных систем: Мир, Белкарт, АПРА, Корти Милли, Express Pay</p>
+				<p>При оплате не из РФ нажмите на кнопку <a href="#buy-from-abroad">"Купить не из России"</a>
+				</p>
 			</div>
 		</div>
 	</div>
@@ -203,7 +213,7 @@
 	</div>
 
 	<footer>
-		<p>&copy; laffy kids, 2024</p>
+		<p>&copy; Laffy_kids, 2024</p>
 	</footer>
 
 	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>

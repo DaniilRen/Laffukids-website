@@ -69,6 +69,14 @@ li span {
 	color: var(--orange);
 }
 
+.unselectable {
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
 /* NAVIGATION BAR STYLES */
 
 header {
@@ -347,6 +355,10 @@ header {
 	transition: var(--transition);
 }
 
+.dropdown-content p a {
+	font-weight: 600;
+}
+
 .active {
 	height: 40px;
 	padding: 30px 0 0 0;
@@ -506,6 +518,9 @@ form button:hover {
 }
 
 .small-text {
-	text-align: center;
-	font-size: 14px;
+	font-size: 16px;
+}
+
+.small-text span {
+	font-weight: 700;
 }
